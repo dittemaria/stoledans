@@ -1,0 +1,214 @@
+
+html {
+    height: 100%;
+    
+    
+}
+
+body {
+    height: 100%;
+    
+}
+
+
+h1 {
+    text-align: center;
+    font-size: 60px;
+    font-family: fantasy; 
+    text-color: #8affc8; text-shadow: #808080 0.1em 0.1em 0.3em;
+    
+}
+
+a {
+    color: white;
+    A:link {text-decoration: none}
+    A:visited {text-decoration: none}
+    A:active {text-decoration: none}
+}
+
+.howto {
+    background-color: none;
+    padding-top: 50px;
+    padding-bottom: 40px;
+    padding-left: 80px;
+    padding-right: 80px;
+    border: double;
+    position: fixed;
+    left: 25%;
+    top: 25%;
+    font-size: large;
+    
+}
+    
+
+
+
+.center {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 650px;
+  margin-top: -25px;
+  margin-left: -325px;
+  text-align: center;
+  
+    
+}
+
+.chair {
+    width: 50px;
+    height: 70px;
+    background-color: white;
+    
+}
+
+
+
+.person {
+    top: 50%;
+    margin-top: -170px;
+    position:fixed;
+    left:250px;
+    bottom:none;
+    -webkit-transition: margin-top 9s ease;
+    transition: margin-top 2s ease;
+
+}
+
+.dead{
+    margin-top:1000px;
+}
+
+
+.face {
+    height: 30px;
+    position:absolute;
+    top:20px;
+    left:7px;
+}
+
+.stickman {
+    width: 50px;
+}
+
+.bottom {
+    background-color: none;
+    text-align: center;
+    position: fixed;
+    bottom: 11%;
+    left: 50%;
+    width: 350px;
+    margin-left: -175px;
+    height: 70px;
+    border-width: 6px;
+    border-style: solid;
+    border-color: black;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+
+
+  
+}
+
+.button {
+    width: 60px;
+    margin-top: 5px;
+    
+    
+}
+
+
+#files {
+    background-color: none;
+    padding: 10px;
+    width: 170px;
+    height: 420px;
+    border-style: dashed;
+    border-color: black;
+    border-width: 2px;
+    position: fixed;
+    bottom: 10%;
+    text-align: center;
+    left: 30px;
+    
+}
+
+
+.about {
+    position: fixed;
+    bottom: 10%;
+    right: 5%;
+    width: 50px;
+    height: 50px;
+    background-color: black;
+    border-color: white;
+    text-align: center;
+    line-height: 0.5em;
+   border: 3.63636363636364px solid #ffffff;
+  -moz-border-radius: 32px;
+  -webkit-border-radius: 32px;
+  border-radius: 32px;
+  box-shadow: 0 0 6px #000000, 1.63636363636364px 1.63636363636364px 1.63636363636364px rgba(0, 0, 0, 0.3), -1.63636363636364px 1.63636363636364px 1.63636363636364px rgba(0, 0, 0, 0.3), 1.63636363636364px -1.63636363636364px 1.63636363636364px rgba(0, 0, 0, 0.3), -1.63636363636364px -1.63636363636364px 1.63636363636364px rgba(0, 0, 0, 0.3);
+  -ms-box-shadow: 0 0 6px #000000, 1.63636363636364px 1.63636363636364px 1.63636363636364px rgba(0, 0, 0, 0.3), -1.63636363636364px 1.63636363636364px 1.63636363636364px rgba(0, 0, 0, 0.3), 1.63636363636364px -1.63636363636364px 1.63636363636364px rgba(0, 0, 0, 0.3), -1.63636363636364px -1.63636363636364px 1.63636363636364px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 0 6px #000000, 1.63636363636364px 1.63636363636364px 1.63636363636364px rgba(0, 0, 0, 0.3), -1.63636363636364px 1.63636363636364px 1.63636363636364px rgba(0, 0, 0, 0.3), 1.63636363636364px -1.63636363636364px 1.63636363636364px rgba(0, 0, 0, 0.3), -1.63636363636364px -1.63636363636364px 1.63636363636364px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0 0 6px #000000, 1.63636363636364px 1.63636363636364px 1.63636363636364px rgba(0, 0, 0, 0.3), -1.63636363636364px 1.63636363636364px 1.63636363636364px rgba(0, 0, 0, 0.3), 1.63636363636364px -1.63636363636364px 1.63636363636364px rgba(0, 0, 0, 0.3), -1.63636363636364px -1.63636363636364px 1.63636363636364px rgba(0, 0, 0, 0.3);
+
+    
+}
+
+
+
+.tooltip span{
+  display: none;
+}
+
+
+.tooltip:hover span{
+  padding: 0px;
+  display: table;
+  font-size: 18px;
+  color: black;
+  text-decoration: none !important;
+  background-color: none;
+  border: solid black 3px;
+  bottom: 30px;
+  position: fixed;
+  width: 150px;
+  left: 50%;
+  margin-left: -75px;
+  border-radius: 10px;
+}
+
+
+.tooltip:hover span:before{
+    border:solid;
+    border-color: black transparent; 
+    border-width: 0px 10px 20px 8px;
+    bottom: 21px;
+    content:"";
+    display:block;
+    position:absolute;
+    z-index:99;
+}
+
+
+.tip-left:hover span:before{
+   left:10%; 
+}
+
+
+.tip-center:hover span:before{
+   left:45%; 
+}
+
+
+.tip-right:hover span:before{
+   left:80%; 
+}
+
+
+
+
+
+

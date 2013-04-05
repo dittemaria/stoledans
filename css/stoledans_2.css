@@ -1,0 +1,27 @@
+  
+  
+html {
+    height: 100%;
+    
+    
+}
+
+body {
+    height: 100%;
+    background-color: none;
+    
+}
+  
+  <div class="howTo">
+            <span><h2>Hey! Hvad er det her egentlig? Og hvordan gør jeg?</h2><i>Det er sten, saks, papir. Bare meget sjovere. Og så er det nemt.</i></br></span>
+            
+            
+            <ol>
+                <li>Upload billeder</li>
+                <li>Start musikken</li>
+                <li>Stop musikken og se hvem der forsvinder</li>
+            </ol>
+            <span class="close-btn-32" title="Close">Close</span>
+        </div>
+        
+

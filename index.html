@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+    
+    <html>
+        <head>
+            <meta charset="UTF-8">
+                
+            <link rel="stylesheet" type="tekst/css" href="css/stoledans.css"/>
+            <link rel="stylesheet" type="tekst/css" href="css/close-btn.css"/>
+            
+            
+            <script src="js/jquery-1.9.1.min.js"></script>
+            <script src="js/stoledans.js"></script>
+            
+            
+            <title>Stoledans</title>
+                
+            
+        </head>
+        
+        <body>
+            
+        <h1>Stoledans</h1>
+            
+        <div class="howTo">
+            <span><h3>Hey, hvad er det her egentlig? Og hvordan gør jeg?</h3><i>- Det er sten, saks, papir. Bare meget sjovere. Og så er det nemt.</i></br></span>
+            
+            
+            <ol>
+                <li>Upload billeder</li>
+                <li>Start musikken</li>
+                <li>Stop musikken og se hvem der forsvinder</li>
+            </ol>
+            <span class="close-btn-32" title="Close">Close</span>
+        </div>
+            
+        
+            
+        <div class="center"> 
+            <img class="chair" id="chair" src="img/chair.png" style="display:none" />
+        </div>
+        
+     
+     <div class="bottom">
+        <span class="tooltip tip-left">
+            <img class="button" id="play" src="img/play.png"/>
+            <span>Start musikken!</span>
+        </span>
+        <span class="tooltip tip-center">
+            <img class="button" id="pause" src="img/pause.png"/>
+            <span>Smid én ud!</span>
+        </span>
+        <span class="tooltip tip-right"> 
+            <img class="button" id="refresh" src="img/refresh.png"/>
+            <span>Start forfra!</span>
+        </span>
+    </div>
+     
+    <a href="index_2.html">
+        <div class="about">
+            <h2>?</h2>
+        </div>
+    </a>
+    
+     <span class="person" id="first">   
+            <img class="stickman" src="img/stickman_1_nohead.png"/>
+            <input type="file" class="close-btn-48" value="test" id="files" name="files[]" multiple />
+            <div class="bubble"> hest </div>
+    </span>
+        
+     
+     
+     <!-- usynlig lyd -->
+     <audio>
+        <source src="audio/song.mp3" type="audio/mpeg" />
+        <source src="audio/song.ogg" type="audio/ogg" />
+
+    </audio>
+     
+    
+    
+    
+    
+    
+        
+    </body>
+        
+    </html>

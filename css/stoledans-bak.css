@@ -1,0 +1,163 @@
+
+html {
+    height: 100%;
+    
+    
+}
+
+body {
+    height: 100%;
+    background-color: none;
+    
+}
+
+
+h1 {
+    text-align: center;
+    font-size: 90px;
+    font-family: fantasy;
+    text-color: #8affc8; text-shadow: #9d86ff 0.1em 0.1em 0.2em; 
+    
+    
+}
+
+.center {
+    
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 650px;
+  margin-top: -25px;
+  margin-left: -325px;
+  text-align: center;
+  
+    
+}
+
+.chair {
+    width: 50px;
+    height: 70px;
+    background-color: white;
+    
+}
+
+.face {
+    height: 30px;
+    position:absolute;
+    top:20px;
+}
+
+.person {
+    top: 50%;
+    margin-top: -170px;
+    position:fixed;
+    left:250px;
+  
+    
+    
+}
+.stickman {
+    width: 50px;
+}
+
+.bottom {
+    background-color: none;
+    text-align: center;
+    position: fixed;
+    bottom: 10%;
+    left: 50%;
+    width: 350px;
+    margin-left: -175px;
+    height: 70px;
+    border-width: 6px;
+    border-style: solid;
+    border-color: black;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+
+
+  
+}
+
+.button {
+    width: 60px;
+    margin-top: 5px;
+    
+    
+}
+
+
+#files {
+    background-color: none;
+    padding: 10px;
+    width: 170px;
+    height: 300px;
+    border-style: dashed;
+    border-color: black;
+    border-width: 2px;
+    position: fixed;
+    bottom: 10%;
+    text-align: center;
+    left: 30px;
+    
+}
+
+
+.tooltip span{
+  display: none;
+}
+
+
+
+
+.tooltip:hover span{
+  padding: 20px;
+  display: table;
+  font-size: 18px;
+  color: black;
+  text-decoration: none !important;
+  background-color: lightblue;
+  border: solid black 3px;
+  bottom: 170px;
+  position: fixed;
+  width: 150px;
+  left: 50%;
+  margin-left: -90px;
+  border-radius: 10px;
+}
+
+.tooltip:hover span:after{
+    border:solid;
+    border-color:#111 transparent;
+    border-width:20px 10px 0 10px;
+    bottom:-20px;
+    content:"";
+    display:block;
+    position:absolute;
+    z-index:99;
+    }
+
+.tip-left:hover span:after{
+   left:10%; 
+}
+
+.tip-center:hover span:after{
+   left:45%; 
+}
+
+.tip-right:hover span:after{
+   left:80%; 
+}
+
+
+.dead{
+    top: none;
+    bottom:0px;
+}
+
+
+
+
+
+
