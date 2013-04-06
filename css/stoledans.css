@@ -25,22 +25,7 @@ a {
     
 }
 
-.howTo {
-    background-color: none;
-    padding-top: 50px;
-    padding-bottom: 40px;
-    padding-left: 80px;
-    padding-right: 80px;
-    border: double;
-    position: fixed;
-    left: 25%;
-    top: 25%;
-    font-size: large;
-    
-}
-    
-
-
+/********* stole *********/
 
 .center {
   position: fixed;
@@ -61,10 +46,10 @@ a {
     
 }
 
-
+/*********personer*******/
 
 .person {
-    top: 40%;
+    top: 300px;
     margin-top: -170px;
     position:fixed;
     left:470px;
@@ -72,10 +57,10 @@ a {
 }
 
 .positionRight {
-    top: 40%;
+    top: 300px;
     margin-top: -170px;
     position: fixed;
-    left: 520px;
+    left: 540px;
     
 }
 
@@ -123,13 +108,13 @@ input.face {
 }
 
 .stickman {
-    width: 76%;
+    width: 75px;
 
     
 }
 
 
-/*  http://www.ilikepixels.co.uk/drop/bubbler/  */
+/******kode taget fra:  http://www.ilikepixels.co.uk/drop/bubbler/  */
 
 .bubble {
     position: fixed;
@@ -182,6 +167,11 @@ input.close-btn-48:before {
   content: "+";
   }
 
+
+
+
+/*********** betjeningspanel *************/
+
 .bottom {
     background-color: none;
     text-align: center;
@@ -208,31 +198,6 @@ input.close-btn-48:before {
     
     
 }
-
-
-.about {
-    position: fixed;
-    bottom: 10%;
-    right: 5%;
-    width: 36px;
-    height: 36px;
-    background-color: black;
-    border-color: white;
-    text-align: center;
-    line-height: .0em;
-   border: 3.63636363636364px solid #ffffff;
-  -moz-border-radius: 32px;
-  -webkit-border-radius: 32px;
-  border-radius: 32px;
-  box-shadow: 0 0 6px #000000, 1.63636363636364px 1.63636363636364px 1.63636363636364px rgba(0, 0, 0, 0.3), -1.63636363636364px 1.63636363636364px 1.63636363636364px rgba(0, 0, 0, 0.3), 1.63636363636364px -1.63636363636364px 1.63636363636364px rgba(0, 0, 0, 0.3), -1.63636363636364px -1.63636363636364px 1.63636363636364px rgba(0, 0, 0, 0.3);
-  -ms-box-shadow: 0 0 6px #000000, 1.63636363636364px 1.63636363636364px 1.63636363636364px rgba(0, 0, 0, 0.3), -1.63636363636364px 1.63636363636364px 1.63636363636364px rgba(0, 0, 0, 0.3), 1.63636363636364px -1.63636363636364px 1.63636363636364px rgba(0, 0, 0, 0.3), -1.63636363636364px -1.63636363636364px 1.63636363636364px rgba(0, 0, 0, 0.3);
-  -moz-box-shadow: 0 0 6px #000000, 1.63636363636364px 1.63636363636364px 1.63636363636364px rgba(0, 0, 0, 0.3), -1.63636363636364px 1.63636363636364px 1.63636363636364px rgba(0, 0, 0, 0.3), 1.63636363636364px -1.63636363636364px 1.63636363636364px rgba(0, 0, 0, 0.3), -1.63636363636364px -1.63636363636364px 1.63636363636364px rgba(0, 0, 0, 0.3);
-  -webkit-box-shadow: 0 0 6px #000000, 1.63636363636364px 1.63636363636364px 1.63636363636364px rgba(0, 0, 0, 0.3), -1.63636363636364px 1.63636363636364px 1.63636363636364px rgba(0, 0, 0, 0.3), 1.63636363636364px -1.63636363636364px 1.63636363636364px rgba(0, 0, 0, 0.3), -1.63636363636364px -1.63636363636364px 1.63636363636364px rgba(0, 0, 0, 0.3);
-
-    
-}
-
-
 
 .tooltip span{
   display: none;
@@ -281,6 +246,33 @@ input.close-btn-48:before {
 .tip-right:hover span:before{
    left:80%; 
 }
+
+
+/*********** knap til "?" i h¿jre hj¿rne ********/
+
+.about {
+    position: fixed;
+    bottom: 10%;
+    right: 5%;
+    width: 36px;
+    height: 36px;
+    background-color: black;
+    border-color: white;
+    text-align: center;
+    line-height: .0em;
+   border: 3.63636363636364px solid #ffffff;
+  -moz-border-radius: 32px;
+  -webkit-border-radius: 32px;
+  border-radius: 32px;
+  box-shadow: 0 0 6px #000000, 1.63636363636364px 1.63636363636364px 1.63636363636364px rgba(0, 0, 0, 0.3), -1.63636363636364px 1.63636363636364px 1.63636363636364px rgba(0, 0, 0, 0.3), 1.63636363636364px -1.63636363636364px 1.63636363636364px rgba(0, 0, 0, 0.3), -1.63636363636364px -1.63636363636364px 1.63636363636364px rgba(0, 0, 0, 0.3);
+  -ms-box-shadow: 0 0 6px #000000, 1.63636363636364px 1.63636363636364px 1.63636363636364px rgba(0, 0, 0, 0.3), -1.63636363636364px 1.63636363636364px 1.63636363636364px rgba(0, 0, 0, 0.3), 1.63636363636364px -1.63636363636364px 1.63636363636364px rgba(0, 0, 0, 0.3), -1.63636363636364px -1.63636363636364px 1.63636363636364px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 0 6px #000000, 1.63636363636364px 1.63636363636364px 1.63636363636364px rgba(0, 0, 0, 0.3), -1.63636363636364px 1.63636363636364px 1.63636363636364px rgba(0, 0, 0, 0.3), 1.63636363636364px -1.63636363636364px 1.63636363636364px rgba(0, 0, 0, 0.3), -1.63636363636364px -1.63636363636364px 1.63636363636364px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0 0 6px #000000, 1.63636363636364px 1.63636363636364px 1.63636363636364px rgba(0, 0, 0, 0.3), -1.63636363636364px 1.63636363636364px 1.63636363636364px rgba(0, 0, 0, 0.3), 1.63636363636364px -1.63636363636364px 1.63636363636364px rgba(0, 0, 0, 0.3), -1.63636363636364px -1.63636363636364px 1.63636363636364px rgba(0, 0, 0, 0.3);
+
+    
+}
+
+
 
 
 
