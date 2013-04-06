@@ -1,0 +1,16 @@
+Ved dagligt arbejde:
+-------------------
+git pull
+git commit -a -m "commit besked"
+git push
+
+
+
+
+Ved ny fil:
+-----------
+git add <filnavn>
+git commit -a -m "commit besked"
+git push
+
+ 
