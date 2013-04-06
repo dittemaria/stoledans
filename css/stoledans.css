@@ -2,10 +2,6 @@ html {
     height: 100%;
     }
 
-body {
-    height: 100%;
-    
-}
 
 
 h1 {
@@ -13,6 +9,13 @@ h1 {
     font-size: 80px;
     font-family: fantasy; 
     text-color: #8affc8; text-shadow: #808080 0.1em 0.1em 0.3em;
+    
+}
+
+h2 {
+    text-align: center;
+    font-size: 18px;
+    font: bold;
     
 }
 
@@ -52,8 +55,8 @@ a {
 }
 
 .chair {
-    width: 50px;
-    height: 70px;
+    width: 65px;
+    height: 100px;
     background-color: white; 
     
 }
@@ -64,7 +67,7 @@ a {
     top: 40%;
     margin-top: -170px;
     position:fixed;
-    left:250px;
+    left:470px;
     
 }
 
@@ -89,8 +92,8 @@ a {
     width: 70px;
     height: 70px;
     position:absolute;
-    top:150px;
-    left:140px;
+    top:15px;
+    left: 10px;
     -webkit-border-radius: 35px;
     -moz-border-radius: 35px;
     border-radius: 35px; 
@@ -113,53 +116,54 @@ input.face {
 }
 
 .stickman {
-    width: 30%;
+    width: 76%;
 
     
 }
 
+
+/*  http://www.ilikepixels.co.uk/drop/bubbler/  */
+
 .bubble {
-position: relative;
-width: 235px;
-height: 135px;
-padding: 12px;
-background: #FFFFFF;
-border: #7F7F7F solid 7px;
--webkit-border-radius: 51px;
--moz-border-radius: 51px;
-border-radius: 51px;
+    position: fixed;
+    width: 325px;
+    height: 195px;
+    padding: 12px;
+    background: #FFFFFF;
+    border: #7E7F7F solid 7px;
+    -webkit-border-radius: 35px;
+    -moz-border-radius: 35px;
+    border-radius: 35px;
+    left: 30px;
+    top: 130px;
 
 }
 
-
 .bubble:after {
-content: "";
-position: absolute;
-top: 77px;
-right: -62px;
-border-style: solid;
-border-width: 14px 0 14px 62px;
-border-color: transparent #FFFFFF;
-display: block;
-width: 0;
-z-index: 1;
-
+    content: "";
+    position: absolute;
+    top: 37px;
+    right: -73px;
+    border-style: solid;
+    border-width: 20px 0 20px 73px;
+    border-color: transparent #FFFFFF;
+    display: block;
+    width: 0;
+    z-index: 1;
 }
 
 .bubble:before {
-content: "";
-position: absolute;
-top: 71px;
-left: 266px;
-border-style: solid;
-border-width: 20px 0 20px 68px;
-border-color: transparent #7F7F7F;
-display: block;
-width: 0;
-z-index: 0;
-
+    content: "";
+    position: absolute;
+    top: 31px;
+    left: 356px;
+    border-style: solid;
+    border-width: 26px 0 26px 79px;
+    border-color: transparent #7E7F7F;
+    display: block;
+    width: 0;
+    z-index: 0;
 }
-
 
 
 input.close-btn-48 {
