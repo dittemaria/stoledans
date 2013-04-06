@@ -7,7 +7,9 @@ var allDancers = null;
 var allPositions = null;
 
 
-
+/**
+ * Bare en kommentar
+ **/
 $(document).ready(function () {
    
    
