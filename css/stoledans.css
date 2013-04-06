@@ -71,6 +71,13 @@ a {
     
 }
 
+.positionRight {
+    top: 40%;
+    margin-top: -170px;
+    position: fixed;
+    left: 520px;
+    
+}
 
 .vinder {
     top: 50%;
