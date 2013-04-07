@@ -38,7 +38,7 @@ a {
 
 .center {
   position: fixed;
-  top: 50%;
+  top: 43%;
   left: 50%;
   width: 650px;
   margin-top: -25px;
@@ -195,7 +195,7 @@ input.close-btn-48:before {
     background-color: none;
     text-align: center;
     position: fixed;
-    bottom: 11%;
+    bottom: 5%;
     left: 50%;
     width: 20%;
     margin-left: -10%;
@@ -267,9 +267,18 @@ input.close-btn-48:before {
 }
 
 
+/*********** vinder ***************/
+
+.flag {
+    position: fixed;
+    left: 45%;
+    top: 10%;
+}
+
 /*********** knap til "?" i h¿jre hj¿rne ********/
 
 .about {
+    display: none;
     position: fixed;
     bottom: 10%;
     right: 5%;
