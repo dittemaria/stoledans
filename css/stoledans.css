@@ -58,18 +58,16 @@ a {
 /********* personer *******/
 
 .person {
-    top: 300px;
-    margin-top: -170px;
+    top: 20%;
     position:fixed;
-    left:470px;
+    left:40%;
     
 }
 
 .positionRight {
-    top: 300px;
-    margin-top: -170px;
+    top: 20%;
     position: fixed;
-    left: 540px;
+    left: 45%;
     
 }
 
