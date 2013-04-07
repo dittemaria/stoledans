@@ -30,10 +30,6 @@ $(document).ready(function () {
       } else {
          
       }
-      //if(allDancers.length != 1){
-      //   proceed();
-      //   removeChair();
-      //}
       go=true;
       $('.bubble').css('display','none');
       $('audio').trigger('play');
@@ -213,7 +209,7 @@ function addTemplate(elem){
 }
 
 function removePerson(){
-
+   
    var rand = Math.floor((Math.random()*allDancers.length)+0);
    allDancers[rand].addClass('dead');
    var deadPerson = allDancers[rand];
@@ -233,37 +229,11 @@ function removePerson(){
       $(deadPerson).find('img[class="ansigt"]').addClass('face-dead');
    }, 4000);
    
-   //alert(allDancers.length + "; " + deadDancers.length);
-/*
-   var removed = false;
-   while (!removed){
-      if( $('#dancer'+rand)[0]){
-         
-         var height = $(window).height();
-         var width = $(window).width();
-         
-         $('#dancer'+rand).css('margin-top','0px;');
-         $('#dancer'+rand).css('top',height+60+'px');
-         $('#dancer'+rand).css('left',width-150-(120*(numberOfDancers-numberAlive))+'px');
-      
-         $('#dancer'+rand).addClass('dead');
-         
-         
-         setTimeout(function(){
-                  $('#dancer'+rand + ' > span > img').addClass('face-dead');
-                  $('#dancer'+rand).attr('id','');
-         
-         }, 4000);
-         removed = true;
-         numberAlive--;
-         if(numberAlive === 1){
-            // THE END
-            alert('tillykke');
-         }
-      
-      }
-      */
+   if(allDancers.length == 1){
+      removeChair();
+      $(allDancers[0]).addClass('vinder');
    }
+}
 
 
 
