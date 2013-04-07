@@ -1,5 +1,5 @@
 var move = 10;
-var timeout = 50;
+var timeout = 200;
 var go = true;
 
 var initialLeft = 33;
