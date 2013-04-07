@@ -89,14 +89,14 @@ function moveOn(elem, pos, direction){
          moveDown(elem, pos);
          direction = "down";
       }
-   } else if(direction.equals('down')){
+   } else if(direction === 'down'){
       if(p.top < screenHeight/2){
          moveDown(elem, pos);  
       } else {
          moveLeft(elem, pos);
          direction = "left";
       }
-   } else if(direction.equals('left')){
+   } else if(direction === 'left'){
       if(p.left > screenWidth/3 -(allDancers.length * 30)){
          moveLeft(elem, pos);  
       } else {
@@ -104,7 +104,7 @@ function moveOn(elem, pos, direction){
          direction = "up";
       }
    } else {
-      if(p.top > screenHeight/2-screenHeight/4){
+      if(p.top > screenHeight/5){
          moveUp(elem, pos);  
       } else {
          moveRight(elem, pos);
@@ -249,6 +249,9 @@ function removePerson(){
    
    if(allDancers.length == 1){
       $(allDancers[0]).addClass('vinder');
+      $(allDancers[0]).css('left','46%');
+      $(allDancers[0]).css('top','18%');
+      $('.flag').css('display','block');
    } else {
       removeChair(); 
    }
