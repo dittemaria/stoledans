@@ -146,16 +146,16 @@ input.face {
     -webkit-border-radius: 35px;
     -moz-border-radius: 35px;
     border-radius: 35px;
-    left: 30px;
-    top: 130px;
+    left: 2%;
+    top: 10%;
 
 }
 
 .bubble:after {
     content: "";
     position: fixed;
-    top: 22.3%;
-    left: 27%;
+    top: 14.25%;
+    left: 26.9%;
     border-style: solid;
     border-width: 20px 0 20px 73px;
     border-color: transparent #FFFFFF;
@@ -167,7 +167,7 @@ input.face {
 .bubble:before {
     content: "";
     position: fixed;
-    top: 21.5%;
+    top: 13.5%;
     left: 27.4%;
     border-style: solid;
     border-width: 26px 0 26px 79px;
