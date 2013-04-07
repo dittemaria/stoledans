@@ -249,8 +249,8 @@ function removePerson(){
    
    if(allDancers.length == 1){
       $(allDancers[0]).addClass('vinder');
-      $(allDancers[0]).css('left','46%');
-      $(allDancers[0]).css('top','18%');
+      $(allDancers[0]).css('left','48%');
+      $(allDancers[0]).css('top','20%');
       $('.flag').css('display','block');
    } else {
       removeChair(); 
