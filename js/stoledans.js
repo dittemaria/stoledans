@@ -2,6 +2,8 @@ var move = 10;
 var timeout = 200;
 var go = true;
 
+var initialLeft = 33;
+var spacing = 5;
 
 var numberOfDancers = 0;
 var numberAlive= 0;
@@ -17,10 +19,8 @@ var allPositions = null;
  **/
 $(document).ready(function () {
    
-   $("input[type='file']").on('change', function(){
+   $(".person input").on('change', function(){
       readURL(this); //prev is the img tag
-      // add dancer (person) to allDancers
-      
    });
    
     $('#play').on('click', function () {
@@ -165,49 +165,44 @@ function readURL(input) {
 */
 
 
-function addChair(){
-   $('#chair').clone().appendTo('.center').css('display','inline').attr('id','');
-}
-
-
-
-
-
-
-
-
-
-
 /********** Handling chairs *********/
 function removeChair(){
    $('.center img:last').remove();
 }
 
-
-
+function addChair(){
+   $('#chair').clone().appendTo('.center').css('display','inline').attr('id','');
+}
 
 
 /*********** Handling persons**************/
 function addPerson(elem){
    // First and second we just andd faces and push them into the
    // Array of persons
-   // <img class="ansigt" src="img/foto_1.png"/>
 
-   if (allDancers.length >= 2){
+   if (allDancers.length == 0){
       allDancers.push(elem);  
-   }
-   alert(allDancers.lenght);
-   /*
-   var position = $(document).width()/2 - 75;
-   if (numberOfDancers % 2 === 0){
-      position = position + (numberOfDancers/2 * 70)
+   } else if (allDancers.length == 1){
+      allDancers.push(elem);  
+      addTemplate(elem);
+      $(elem).attr("id","");
    } else {
-      position = position - ((numberOfDancers+1)/2 * 70)
+      allDancers.push(elem);  
+      addTemplate(elem);
+      $(elem).attr("id","");
+      addChair();
    }
-   $('#first').clone().appendTo('body').css('display','inline').css('left',position).attr('id','dancer'+numberOfDancers);
-   */
+   
 }
 
+function addTemplate(elem){
+   $(elem).after($('#person_template').clone());
+   var newLeft = initialLeft + ( allDancers.length * spacing ) + "%";
+   $('.person:last').css('left', newLeft);
+   $(".person input").on('change', function(){
+      readURL(this); //prev is the img tag
+   });
+}
 
 function removePerson(){
    var removed = false;
