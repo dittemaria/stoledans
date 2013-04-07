@@ -1,11 +1,13 @@
 var move = 10;
 var timeout = 200;
 var go = true;
+
+
 var numberOfDancers = 0;
 var numberAlive= 0;
 
 
-var allDancers = null;
+var allDancers = new Array();; //.person elements
 var allPositions = null;
 
 
@@ -15,7 +17,7 @@ var allPositions = null;
  **/
 $(document).ready(function () {
    
-   $('.fileinput').on('change', function(){
+   $("input[type='file']").on('change', function(){
       readURL(this); //prev is the img tag
       // add dancer (person) to allDancers
       
@@ -46,6 +48,8 @@ $(document).ready(function () {
 });
 
 
+
+/************ Handling movements *****************/
 
 function proceed(){
    allDancers = $('.person:not(#first):not(.dead)'); // array of all live dancers
@@ -140,14 +144,11 @@ function moveUp(elem, pos){
 function readURL(input) {
    if (input.files && input.files[0]) {
       var reader = new FileReader();
-
       reader.onload = function (e) {
-         $(input).prev()
-            .attr('src', e.target.result)
-               //.width(150)
-               //.height(200);
+         $(input).parent().append("<img src='"+ e.target.result +"'class='ansigt' />");
       };
       reader.readAsDataURL(input.files[0]);
+      addPerson($(input).parent());
    }
 }
 
@@ -173,7 +174,30 @@ function addChair(){
 
 
 
-function addPerson(){
+
+
+
+
+/********** Handling chairs *********/
+function removeChair(){
+   $('.center img:last').remove();
+}
+
+
+
+
+
+/*********** Handling persons**************/
+function addPerson(elem){
+   // First and second we just andd faces and push them into the
+   // Array of persons
+   // <img class="ansigt" src="img/foto_1.png"/>
+
+   if (allDancers.length >= 2){
+      allDancers.push(elem);  
+   }
+   alert(allDancers.lenght);
+   /*
    var position = $(document).width()/2 - 75;
    if (numberOfDancers % 2 === 0){
       position = position + (numberOfDancers/2 * 70)
@@ -181,6 +205,7 @@ function addPerson(){
       position = position - ((numberOfDancers+1)/2 * 70)
    }
    $('#first').clone().appendTo('body').css('display','inline').css('left',position).attr('id','dancer'+numberOfDancers);
+   */
 }
 
 
@@ -215,7 +240,5 @@ function removePerson(){
    }
 }
 
-function removeChair(){
-   $('.center img:last').remove();
-}
+
 
