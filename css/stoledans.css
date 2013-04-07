@@ -55,7 +55,7 @@ a {
     
 }
 
-/*********personer*******/
+/********* personer *******/
 
 .person {
     top: 300px;
@@ -123,7 +123,7 @@ input.face {
 }
 
 
-/******kode taget fra:  http://www.ilikepixels.co.uk/drop/bubbler/  */
+/****** kode taget fra:  http://www.ilikepixels.co.uk/drop/bubbler/  ********/
 
 .bubble {
     position: fixed;
@@ -172,6 +172,7 @@ input.close-btn-48 {
     left: 13px;
     background-color:silver;
 }
+
 input.close-btn-48:before {
   content: "+";
   }
@@ -284,8 +285,10 @@ input.close-btn-48:before {
 
 .about > span {
     text-align: center;
-    vertical-align: middle;
-    font-size: 40px;
+    position: fixed;
+    bottom: 13%;
+    right: 6%;
+    font-size: 33px;
     font: bold;
 
     
