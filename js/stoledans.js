@@ -104,7 +104,7 @@ function moveOn(elem, pos, direction){
          direction = "up";
       }
    } else {
-      if(p.top > screenHeight/5){
+      if(p.top > screenHeight/10){
          moveUp(elem, pos);  
       } else {
          moveRight(elem, pos);
