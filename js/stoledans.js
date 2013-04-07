@@ -1,6 +1,6 @@
 var move = 10;
 var timeout = 200;
-var go = true;
+var go = false;
 
 var initialLeft = 33;
 var spacing = 7;
@@ -21,30 +21,34 @@ $(document).ready(function () {
    });
    
     $('#play').on('click', function () {
-      if(deadDancers.length == 0){ // first play
-         if(allDancers.length < 2){
-            alert("Du skal indsætte mindst 2 ansigter");
-            return;
+      if(go === false){
+         go=true;
+         if(deadDancers.length == 0){ // first play
+            if(allDancers.length < 2){
+               alert("Du skal indsætte mindst 2 ansigter");
+               return;
+            }
+            $('.person:last').remove();
+            $('.person').not('.dead').each(function(){
+               moveOn($(this),Math.floor((Math.random()*3)+1), 'right');
+            });
+         } else {
+            $('.person').not('.dead').each(function(){
+               moveOn($(this),Math.floor((Math.random()*3)+1), $(this).attr('rel'));
+            });
          }
-         $('.person:last').remove();
-         $('.person').not('.dead').each(function(){
-            moveOn($(this),Math.floor((Math.random()*3)+1), 'right');
-         });
-      } else {
-         $('.person').not('.dead').each(function(){
-            moveOn($(this),Math.floor((Math.random()*3)+1), $(this).attr('rel'));
-         });
+         
+         $('.bubble').css('display','none');
+         $('audio').trigger('play');
       }
-      go=true;
-      $('.bubble').css('display','none');
-      $('audio').trigger('play');
-      
     });
     
     $('#pause').on('click', function () {
+      if(go === true){
         go=false;
         $('audio').trigger('pause');
            removePerson();
+      }
     });
     $('#refresh').on('click', function () {
         location.reload();
