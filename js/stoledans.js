@@ -5,11 +5,8 @@ var go = true;
 var initialLeft = 33;
 var spacing = 5;
 
-var numberOfDancers = 0;
-var numberAlive= 0;
-
-
-var allDancers = new Array();; //.person elements
+var allDancers = new Array(); //.person elements
+var deadDancers = new Array(); // dead dancers
 var allPositions = null;
 
 
@@ -24,14 +21,25 @@ $(document).ready(function () {
    });
    
     $('#play').on('click', function () {
-      if(allDancers != 1){
-         proceed();
-         removeChair();
+      if(deadDancers.length == 0){ // first play
+         if(allDancers.length < 2){
+            alert("Du skal indsætte mindst 2 ansigter");
+            return;
+         }
+         $('.person:last').remove();
+      } else {
+         
       }
+      //if(allDancers.length != 1){
+      //   proceed();
+      //   removeChair();
+      //}
       go=true;
       $('.bubble').css('display','none');
       $('audio').trigger('play');
-      $('.person').each(function(){
+      
+      
+      $('.person').not('.dead').each(function(){
          moveOn($(this),Math.floor((Math.random()*3)+1));
       });
     });
@@ -39,7 +47,7 @@ $(document).ready(function () {
     $('#pause').on('click', function () {
         go=false;
         $('audio').trigger('pause');
-      //  removePerson();
+           removePerson();
     });
     $('#refresh').on('click', function () {
         location.reload();
@@ -52,11 +60,10 @@ $(document).ready(function () {
 /************ Handling movements *****************/
 
 function proceed(){
-   allDancers = $('.person:not(#first):not(.dead)'); // array of all live dancers
-   for (var i = 0; i < allDancers.length; i++){
-      $(allDancers[i]).css('left',allPositions[i].left);
-      $(allDancers[i]).css('top',allPositions[i].top);
-   }
+   //for (var i = 0; i < allDancers.length; i++){
+   //   $(allDancers[i]).css('left',allPositions[i].left);
+   //   $(allDancers[i]).css('top',allPositions[i].top);
+   //}
 }
 
 function sitDown(){
@@ -81,29 +88,25 @@ function moveRandom(){
 
 function moveOn(elem, pos){
   if(go  && !elem.hasClass('dead')){
-  var p = elem.position();
-  //alert(p.top + ", " + p.left);
-  if(p.left < 600 +(numberAlive * 30) && p.top < 340){
-    moveRight(elem, pos);  
-  }
-  if(p.left >= 600 +(numberAlive * 30) && p.top < 500){
-    moveDown(elem, pos);  
-  }
-  if(p.left > 600 -(numberAlive * 30) && p.top >= 500){
-    moveLeft(elem, pos);  
-  }
-  if(p.left <= 600 -(numberAlive * 30)&& p.top > 320){
-     moveUp(elem, pos);  
-  }
-  
-  
-  
+   var p = elem.position();
+   if(p.left < 600 +(allDancers.length * 30) && p.top < 340){
+      moveRight(elem, pos);  
+   }
+   if(p.left >= 600 +(allDancers.length * 30) && p.top < 500){
+      moveDown(elem, pos);  
+   }
+   if(p.left > 600 -(allDancers.length * 30) && p.top >= 500){
+      moveLeft(elem, pos);  
+   }
+   if(p.left <= 600 -(allDancers.length * 30)&& p.top > 320){
+      moveUp(elem, pos);  
+   }
    if(pos < 3){pos++;} else{pos=1;}
-   setTimeout(function(){
-      moveOn(elem, pos);
+      setTimeout(function(){
+         moveOn(elem, pos);
       }, timeout);
-    }
-  }
+   }
+}
 
 
 
@@ -152,19 +155,6 @@ function readURL(input) {
    }
 }
 
-/*          
-          addPerson();
-          if(numberOfDancers === 0){
-            numberOfDancers++;
-            numberAlive++;
-          } else {
-            addChair();
-            numberOfDancers++;
-            numberAlive++;
-          }          
-*/
-
-
 /********** Handling chairs *********/
 function removeChair(){
    $('.center img:last').remove();
@@ -205,9 +195,16 @@ function addTemplate(elem){
 }
 
 function removePerson(){
+
+   var rand = Math.floor((Math.random()*allDancers.length)+0);
+   allDancers[rand].addClass('dead');
+   deadDancers.push(allDancers[rand]);
+   allDancers.splice(rand,1);
+   
+   alert(allDancers.length + "; " + deadDancers.length);
+/*
    var removed = false;
    while (!removed){
-      var rand = Math.floor((Math.random()*numberOfDancers)+0);
       if( $('#dancer'+rand)[0]){
          
          var height = $(window).height();
@@ -231,9 +228,11 @@ function removePerson(){
             // THE END
             alert('tillykke');
          }
+      
       }
+      */
    }
-}
+
 
 
 
