@@ -73,7 +73,7 @@ a {
 
 .vinder {
     top: 30%;
-    left: 50%;
+    left: 40%;
     
 }
 
@@ -270,9 +270,10 @@ input.close-btn-48:before {
 /*********** vinder ***************/
 
 .flag {
+    display: none;
     position: fixed;
-    left: 41%;
-    top: 0%;
+    left: 48%;
+    top: 1%;
 }
 
 /*********** knap til "?" i h¿jre hj¿rne ********/
