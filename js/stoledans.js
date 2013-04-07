@@ -36,7 +36,7 @@ $(document).ready(function () {
       
       
       $('.person').not('.dead').each(function(){
-         moveOn($(this),Math.floor((Math.random()*3)+1));
+         moveOn($(this),Math.floor((Math.random()*3)+1), 'right');
       });
     });
     
@@ -54,13 +54,6 @@ $(document).ready(function () {
 
 
 /************ Handling movements *****************/
-
-function proceed(){
-   //for (var i = 0; i < allDancers.length; i++){
-   //   $(allDancers[i]).css('left',allPositions[i].left);
-   //   $(allDancers[i]).css('top',allPositions[i].top);
-   //}
-}
 
 function sitDown(){
    allDancers = $('.person:not(#first):not(.dead)'); // array of all live dancers
@@ -82,32 +75,46 @@ function moveRandom(){
 
 
 
-function moveOn(elem, pos){
+function moveOn(elem, pos, direction){
   if(go  && !elem.hasClass('dead')){
+   
    var screenWidth = $(document).width();
    var screenHeight = $(document).height();
    var p = elem.position();
    
-   if(p.left < screenWidth/(1.7) +(allDancers.length * 30) && p.top < screenHeight/2-250){
-      moveRight(elem, pos);  
+   if(direction === 'right'){
+      if(p.left < screenWidth/(1.7) +(allDancers.length * 30)){
+         moveRight(elem, pos);  
+      } else {
+         moveDown(elem, pos);
+         direction = "down";
+      }
+   } else if(direction.equals('down')){
+      if(p.top < screenHeight/2){
+         moveDown(elem, pos);  
+      } else {
+         moveLeft(elem, pos);
+         direction = "left";
+      }
+   } else if(direction.equals('left')){
+      if(p.left > screenWidth/3 -(allDancers.length * 30)){
+         moveLeft(elem, pos);  
+      } else {
+         moveUp(elem, pos);
+         direction = "up";
+      }
+   } else {
+      if(p.top > screenHeight/2-screenHeight/4){
+         moveUp(elem, pos);  
+      } else {
+         moveRight(elem, pos);
+         direction = "right";
+      }     
    }
-   
-   if(p.left >= screenWidth/(1.7) +(allDancers.length * 30) && p.top < screenHeight/2){
-      moveDown(elem, pos);  
-   }
-   
-   
-   if(p.left > screenWidth/3 -(allDancers.length * 30) && p.top >= screenHeight/2){
-      moveLeft(elem, pos);  
-   }
-   
-   if(p.left <= screenWidth/3 - (allDancers.length * 30) && p.top > screenHeight/2-250){
-      moveUp(elem, pos);  
-   }
-   
+
    if(pos < 3){pos++;} else{pos=1;}
       setTimeout(function(){
-         moveOn(elem, pos);
+         moveOn(elem, pos, direction);
       }, timeout);
    }
 }
@@ -207,13 +214,16 @@ function addPerson(img){
 }
 
 function addTemplate(elem){
-   $(elem).after($('#person_template').clone());
-   var newLeft = initialLeft + ( allDancers.length * spacing ) + "%";
-   $('.person:last').css('left', newLeft);
-   $('.person:last img[class="ansigt"]').remove();
-   $(".person input").on('change', function(){
-      readURL(this); //prev is the img tag
-   });
+      $(elem).after($('#person_template').clone());
+      var newLeft = initialLeft + ( allDancers.length * spacing ) + "%";
+      $('.person:last').css('left', newLeft);
+      $('.person:last img[class="ansigt"]').remove();
+      $(".person input").on('change', function(){
+         readURL(this); //prev is the img tag
+      });
+      if(allDancers.length > 6){
+         $('.person:last').css('display', 'none');
+      }
 }
 
 function removePerson(){
@@ -238,8 +248,9 @@ function removePerson(){
    }, 4000);
    
    if(allDancers.length == 1){
-      removeChair();
       $(allDancers[0]).addClass('vinder');
+   } else {
+      removeChair(); 
    }
 }
 
