@@ -1,5 +1,5 @@
 var move = 10;
-var timeout = 200;
+var timeout = 50;
 var go = true;
 
 var initialLeft = 33;
@@ -84,19 +84,27 @@ function moveRandom(){
 
 function moveOn(elem, pos){
   if(go  && !elem.hasClass('dead')){
+   var screenWidth = $(document).width();
+   var screenHeight = $(document).height();
    var p = elem.position();
-   if(p.left < 600 +(allDancers.length * 30) && p.top < 340){
+   
+   if(p.left < screenWidth/(1.7) +(allDancers.length * 30) && p.top < screenHeight/2-250){
       moveRight(elem, pos);  
    }
-   if(p.left >= 600 +(allDancers.length * 30) && p.top < 500){
+   
+   if(p.left >= screenWidth/(1.7) +(allDancers.length * 30) && p.top < screenHeight/2){
       moveDown(elem, pos);  
    }
-   if(p.left > 600 -(allDancers.length * 30) && p.top >= 500){
+   
+   
+   if(p.left > screenWidth/3 -(allDancers.length * 30) && p.top >= screenHeight/2){
       moveLeft(elem, pos);  
    }
-   if(p.left <= 600 -(allDancers.length * 30)&& p.top > 320){
+   
+   if(p.left <= screenWidth/3 - (allDancers.length * 30) && p.top > screenHeight/2-250){
       moveUp(elem, pos);  
    }
+   
    if(pos < 3){pos++;} else{pos=1;}
       setTimeout(function(){
          moveOn(elem, pos);
@@ -211,6 +219,7 @@ function addTemplate(elem){
 function removePerson(){
    
    var rand = Math.floor((Math.random()*allDancers.length)+0);
+   alert(rand);
    allDancers[rand].addClass('dead');
    var deadPerson = allDancers[rand];
    
