@@ -118,9 +118,22 @@ input.face {
 
 .stickman {
     width: 75px;
-
     
 }
+
+.ansigt {
+    width: 70px;
+    height: 70px;
+    position:absolute;
+    top:15px;
+    left: 10px;
+    -webkit-border-radius: 35px;
+    -moz-border-radius: 35px;
+    border-radius: 35px; 
+    
+}
+    
+
 
 
 /****** kode taget fra:  http://www.ilikepixels.co.uk/drop/bubbler/  ********/
@@ -287,7 +300,7 @@ input.close-btn-48:before {
     text-align: center;
     position: fixed;
     bottom: 13%;
-    right: 6%;
+    right: 6.1%;
     font-size: 33px;
     font: bold;
 
