@@ -219,7 +219,6 @@ function addTemplate(elem){
 function removePerson(){
    
    var rand = Math.floor((Math.random()*allDancers.length)+0);
-   alert(rand);
    allDancers[rand].addClass('dead');
    var deadPerson = allDancers[rand];
    
