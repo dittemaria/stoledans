@@ -146,12 +146,14 @@ function moveUp(elem, pos){
  **/
 function readURL(input) {
    if (input.files && input.files[0]) {
+    for(var i = 0; i < input.files.length; i++){
       var reader = new FileReader();
+      reader.readAsDataURL(input.files[i]);
       reader.onload = function (e) {
-         $(input).parent().append("<img src='"+ e.target.result +"'class='ansigt' />");
+         addPerson(e.target.result);
       };
-      reader.readAsDataURL(input.files[0]);
-      addPerson($(input).parent());
+      
+      }
    }
 }
 
@@ -166,20 +168,32 @@ function addChair(){
 
 
 /*********** Handling persons**************/
-function addPerson(elem){
+function addPerson(img){
+   var elemList = $('.person');
+   var elem = $(elemList[0]);
+   for (var i = 0; i < elemList.length; i++){
+      if( $(elemList[i]).find('.ansigt').length == 0 ){
+         elem = $(elemList[i]);
+         break;
+      }
+   }
+   
    // First and second we just andd faces and push them into the
    // Array of persons
 
    if (allDancers.length == 0){
-      allDancers.push(elem);  
+      allDancers.push(elem);
+      elem.append("<img src='"+ img +"'class='ansigt' />");
    } else if (allDancers.length == 1){
       allDancers.push(elem);  
       addTemplate(elem);
+      elem.append("<img src='"+ img +"'class='ansigt' />");
       $(elem).attr("id","");
    } else {
       allDancers.push(elem);  
       addTemplate(elem);
       $(elem).attr("id","");
+      elem.append("<img src='"+ img +"'class='ansigt' />");
       addChair();
    }
    
@@ -189,6 +203,7 @@ function addTemplate(elem){
    $(elem).after($('#person_template').clone());
    var newLeft = initialLeft + ( allDancers.length * spacing ) + "%";
    $('.person:last').css('left', newLeft);
+   $('.person:last img[class="ansigt"]').remove();
    $(".person input").on('change', function(){
       readURL(this); //prev is the img tag
    });
