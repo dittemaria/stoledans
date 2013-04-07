@@ -3,8 +3,11 @@ var timeout = 200;
 var go = true;
 var numberOfDancers = 0;
 var numberAlive= 0;
+
+
 var allDancers = null;
 var allPositions = null;
+
 
 
 /**
@@ -13,16 +16,17 @@ var allPositions = null;
 $(document).ready(function () {
    
    $('.fileinput').on('change', function(){
-      readURL(this); //prev is the img tag   
+      readURL(this); //prev is the img tag
+      // add dancer (person) to allDancers
+      
    });
    
     $('#play').on('click', function () {
-      if(allDancers != null){
+      if(allDancers != 1){
          proceed();
          removeChair();
       }
       go=true;
-      $('#files').css('display','none');
       $('.bubble').css('display','none');
       $('audio').trigger('play');
       $('.person').each(function(){
@@ -33,13 +37,11 @@ $(document).ready(function () {
     $('#pause').on('click', function () {
         go=false;
         $('audio').trigger('pause');
-        
-        removePerson();
+      //  removePerson();
     });
     $('#refresh').on('click', function () {
         location.reload();
     });
-    
     
 });
 
@@ -165,6 +167,11 @@ function readURL(input) {
 function addChair(){
    $('#chair').clone().appendTo('.center').css('display','inline').attr('id','');
 }
+
+
+
+
+
 
 function addPerson(){
    var position = $(document).width()/2 - 75;
