@@ -27,17 +27,18 @@ $(document).ready(function () {
             return;
          }
          $('.person:last').remove();
+         $('.person').not('.dead').each(function(){
+            moveOn($(this),Math.floor((Math.random()*3)+1), 'right');
+         });
       } else {
-         
+         $('.person').not('.dead').each(function(){
+            moveOn($(this),Math.floor((Math.random()*3)+1), $(this).attr('rel'));
+         });
       }
       go=true;
       $('.bubble').css('display','none');
       $('audio').trigger('play');
       
-      
-      $('.person').not('.dead').each(function(){
-         moveOn($(this),Math.floor((Math.random()*3)+1), 'right');
-      });
     });
     
     $('#pause').on('click', function () {
@@ -77,45 +78,47 @@ function moveRandom(){
 
 function moveOn(elem, pos, direction){
   if(go  && !elem.hasClass('dead')){
+      var screenWidth = $(document).width();
+      var screenHeight = $(document).height();
+      var p = elem.position();
+      
+      if(direction === 'right'){
+         if(p.left < screenWidth/(1.7) +(allDancers.length * 30)){
+            moveRight(elem, pos);  
+         } else {
+            moveDown(elem, pos);
+            direction = "down";
+         }
+      } else if(direction === 'down'){
+         if(p.top < screenHeight/2){
+            moveDown(elem, pos);  
+         } else {
+            moveLeft(elem, pos);
+            direction = "left";
+         }
+      } else if(direction === 'left'){
+         if(p.left > screenWidth/3 -(allDancers.length * 30)){
+            moveLeft(elem, pos);  
+         } else {
+            moveUp(elem, pos);
+            direction = "up";
+         }
+      } else {
+         if(p.top > screenHeight/10){
+            moveUp(elem, pos);  
+         } else {
+            moveRight(elem, pos);
+            direction = "right";
+         }     
+      }
    
-   var screenWidth = $(document).width();
-   var screenHeight = $(document).height();
-   var p = elem.position();
-   
-   if(direction === 'right'){
-      if(p.left < screenWidth/(1.7) +(allDancers.length * 30)){
-         moveRight(elem, pos);  
-      } else {
-         moveDown(elem, pos);
-         direction = "down";
-      }
-   } else if(direction === 'down'){
-      if(p.top < screenHeight/2){
-         moveDown(elem, pos);  
-      } else {
-         moveLeft(elem, pos);
-         direction = "left";
-      }
-   } else if(direction === 'left'){
-      if(p.left > screenWidth/3 -(allDancers.length * 30)){
-         moveLeft(elem, pos);  
-      } else {
-         moveUp(elem, pos);
-         direction = "up";
-      }
-   } else {
-      if(p.top > screenHeight/10){
-         moveUp(elem, pos);  
-      } else {
-         moveRight(elem, pos);
-         direction = "right";
-      }     
-   }
-
-   if(pos < 3){pos++;} else{pos=1;}
-      setTimeout(function(){
-         moveOn(elem, pos, direction);
+      if(pos < 3){pos++;} else{pos=1;}
+         setTimeout(function(){
+            moveOn(elem, pos, direction);
+         
       }, timeout);
+   } else {
+      $(elem).attr('rel', direction);
    }
 }
 
