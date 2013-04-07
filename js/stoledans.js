@@ -16,31 +16,20 @@ $(document).ready(function () {
       readURL(this); //prev is the img tag   
    });
    
-   
-   
-   $('.close-btn-32').on('click', function () {
-      $('.howto').slideToggle(500);	      
-   });
-   
-   $('#move').on('click', function () {
-      go=false;    
-    });
-   
-   
     $('#play').on('click', function () {
       if(allDancers != null){
          proceed();
          removeChair();
       }
-      
-        go=true;
-        $('#files').css('display','none');
-        $('.howto').css('display','none');
-        $('audio').trigger('play');
-        $('.person').each(function(){
-            moveOn($(this),Math.floor((Math.random()*3)+1));
-         });
+      go=true;
+      $('#files').css('display','none');
+      $('.bubble').css('display','none');
+      $('audio').trigger('play');
+      $('.person').each(function(){
+         moveOn($(this),Math.floor((Math.random()*3)+1));
+      });
     });
+    
     $('#pause').on('click', function () {
         go=false;
         $('audio').trigger('pause');
