@@ -199,9 +199,9 @@ input.close-btn-48:before {
     position: fixed;
     bottom: 11%;
     left: 50%;
-    width: 350px;
-    margin-left: -175px;
-    height: 70px;
+    width: 20%;
+    margin-left: -10%;
+    height: 8%;
     border-width: 6px;
     border-style: solid;
     border-color: black;
@@ -214,7 +214,7 @@ input.close-btn-48:before {
 }
 
 .button {
-    width: 60px;
+    width: 50px;
     margin-top: 5px;
     
     
