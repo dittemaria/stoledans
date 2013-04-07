@@ -3,7 +3,7 @@ var timeout = 200;
 var go = true;
 
 var initialLeft = 33;
-var spacing = 5;
+var spacing = 7;
 
 var allDancers = new Array(); //.person elements
 var deadDancers = new Array(); // dead dancers
