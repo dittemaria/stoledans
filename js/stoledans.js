@@ -201,7 +201,7 @@ function removePerson(){
    deadDancers.push(allDancers[rand]);
    allDancers.splice(rand,1);
    
-   alert(allDancers.length + "; " + deadDancers.length);
+   //alert(allDancers.length + "; " + deadDancers.length);
 /*
    var removed = false;
    while (!removed){
