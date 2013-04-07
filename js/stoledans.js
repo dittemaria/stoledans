@@ -184,16 +184,19 @@ function addPerson(img){
    if (allDancers.length == 0){
       allDancers.push(elem);
       elem.append("<img src='"+ img +"'class='ansigt' />");
+      elem.find('input').remove();
    } else if (allDancers.length == 1){
       allDancers.push(elem);  
       addTemplate(elem);
       elem.append("<img src='"+ img +"'class='ansigt' />");
+      elem.find('input').remove();
       $(elem).attr("id","");
    } else {
       allDancers.push(elem);  
       addTemplate(elem);
       $(elem).attr("id","");
       elem.append("<img src='"+ img +"'class='ansigt' />");
+      elem.find('input').remove();
       addChair();
    }
    
@@ -213,8 +216,22 @@ function removePerson(){
 
    var rand = Math.floor((Math.random()*allDancers.length)+0);
    allDancers[rand].addClass('dead');
+   var deadPerson = allDancers[rand];
+   
    deadDancers.push(allDancers[rand]);
    allDancers.splice(rand,1);
+   
+   if(allDancers.length % 2 == 0){
+      $(deadPerson).css('top','70%');   
+      $(deadPerson).css('left',90 - deadDancers.length * 3.5 + '%');
+   } else {
+      $(deadPerson).css('top','70%');   
+      $(deadPerson).css('left',4 + deadDancers.length * 3.5 + '%');
+   }  
+     
+   setTimeout(function(){
+      $(deadPerson).find('img[class="ansigt"]').addClass('face-dead');
+   }, 4000);
    
    //alert(allDancers.length + "; " + deadDancers.length);
 /*
@@ -231,7 +248,7 @@ function removePerson(){
       
          $('#dancer'+rand).addClass('dead');
          
-         sitDown();
+         
          setTimeout(function(){
                   $('#dancer'+rand + ' > span > img').addClass('face-dead');
                   $('#dancer'+rand).attr('id','');
