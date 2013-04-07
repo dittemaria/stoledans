@@ -224,10 +224,7 @@ function addTemplate(elem){
       $(".person input").on('change', function(){
          readURL(this); //prev is the img tag
       });
-      if(allDancers.length > 6){
-         $('.person:last').css('display', 'none');
-      }
-}
+   }
 
 function removePerson(){
    
