@@ -12,8 +12,10 @@ var allPositions = null;
  **/
 $(document).ready(function () {
    
+   $('.fileinput').on('change', function(){
+      readURL(this); //prev is the img tag   
+   });
    
-   document.getElementById('files').addEventListener('change', handleFileSelect, false);
    
    
    $('.close-btn-32').on('click', function () {
@@ -21,11 +23,11 @@ $(document).ready(function () {
    });
    
    $('#move').on('click', function () {
-	  go=false;    
-	});
+      go=false;    
+    });
    
    
-	$('#play').on('click', function () {
+    $('#play').on('click', function () {
       if(allDancers != null){
          proceed();
          removeChair();
@@ -34,20 +36,20 @@ $(document).ready(function () {
         go=true;
         $('#files').css('display','none');
         $('.howto').css('display','none');
-		$('audio').trigger('play');
+        $('audio').trigger('play');
         $('.person').each(function(){
             moveOn($(this),Math.floor((Math.random()*3)+1));
          });
-	});
-	$('#pause').on('click', function () {
-		go=false;
+    });
+    $('#pause').on('click', function () {
+        go=false;
         $('audio').trigger('pause');
         
         removePerson();
-	});
+    });
     $('#refresh').on('click', function () {
-		location.reload();
-	});
+        location.reload();
+    });
     
     
 });
@@ -87,25 +89,25 @@ function moveOn(elem, pos){
   var p = elem.position();
   //alert(p.top + ", " + p.left);
   if(p.left < 600 +(numberAlive * 30) && p.top < 340){
-	moveRight(elem, pos);  
+    moveRight(elem, pos);  
   }
   if(p.left >= 600 +(numberAlive * 30) && p.top < 500){
-	moveDown(elem, pos);  
+    moveDown(elem, pos);  
   }
   if(p.left > 600 -(numberAlive * 30) && p.top >= 500){
-	moveLeft(elem, pos);  
+    moveLeft(elem, pos);  
   }
   if(p.left <= 600 -(numberAlive * 30)&& p.top > 320){
-	 moveUp(elem, pos);  
+     moveUp(elem, pos);  
   }
   
   
   
    if(pos < 3){pos++;} else{pos=1;}
    setTimeout(function(){
-	  moveOn(elem, pos);
-	  }, timeout);
-	}
+      moveOn(elem, pos);
+      }, timeout);
+    }
   }
 
 
@@ -140,33 +142,25 @@ function moveUp(elem, pos){
 }
 
 
-function handleFileSelect(evt) {
-   
-   $('.howto').css('display','none');
-	var files = evt.target.files; // FileList object
+/**
+ * 
+ *
+ **/
+function readURL(input) {
+   if (input.files && input.files[0]) {
+      var reader = new FileReader();
 
-	// Loop through the FileList and render image files as thumbnails.
-	for (var i = 0, f; f = files[i]; i++) {
+      reader.onload = function (e) {
+         $(input).prev()
+            .attr('src', e.target.result)
+               //.width(150)
+               //.height(200);
+      };
+      reader.readAsDataURL(input.files[0]);
+   }
+}
 
-	  // Only process image files.
-	  if (!f.type.match('image.*')) {
-		continue;
-	  }
-
-	  var reader = new FileReader();
-      
-	  // Closure to capture the file information.
-	  reader.onload = (function(theFile) {
-		return function(e) {
-		  // Render thumbnail.
-	  	  
-          var span = document.createElement('span');
-		  span.innerHTML = ['<img class="face" src="', e.target.result,
-							'" title="', escape(theFile.name), '"/>'].join('');
-		  
-          $('#first span .face').parent().remove();
-          document.getElementById('first').insertBefore(span, null);
-          
+/*          
           addPerson();
           if(numberOfDancers === 0){
             numberOfDancers++;
@@ -175,15 +169,9 @@ function handleFileSelect(evt) {
             addChair();
             numberOfDancers++;
             numberAlive++;
-          }
-          
-		};
-	  })(f);
+          }          
+*/
 
-	  // Read in the image file as a data URL.
-	  reader.readAsDataURL(f);
-	}
-  }
 
 function addChair(){
    $('#chair').clone().appendTo('.center').css('display','inline').attr('id','');
