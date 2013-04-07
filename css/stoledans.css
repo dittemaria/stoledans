@@ -6,9 +6,9 @@ html {
 
 h1 {
     text-align: center;
-    font-size: 450%;
+    font-size: 300%;
     font-family: fantasy; 
-    text-color: #8affc8; text-shadow: #808080 0.1em 0.1em 0.3em;
+    text-color: #8affc8; 
     
 }
 
@@ -58,16 +58,16 @@ a {
 /********* personer *******/
 
 .person {
-    top: 20%;
+    top: 10%;
     position:fixed;
     left:33%;
     
 }
 
 .positionRight {
-    top: 20%;
+    top: 10%;
     position: fixed;
-    left: 38%;
+    left: 40%;
     
 }
 
