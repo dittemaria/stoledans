@@ -6,4 +6,6 @@ Upload billeder og start musikken. Gameplayet er taget fra en klassisk børneleg
 Der er hele tiden én stol mindre end personer. Når musikken stopper skal alle skynde sig at finde en stol og sætte sig ned.
 Den, der ikke finder en plads er ude af legen, der fortsætter til der kun sidder én person tilbage på én stol.
 
+Se det på http://stoledans.dk
+
 Lavet af Jacob Larsen & Ditte Maria Bergstrøm. Kontakt ditteberg@gmail.com. 
